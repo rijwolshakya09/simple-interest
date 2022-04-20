@@ -1,3 +1,4 @@
+import 'package:app/arithmeticfunction.dart';
 import 'package:flutter/material.dart';
 
 class MyScreen extends StatefulWidget {
@@ -13,7 +14,31 @@ class _MyScreenState extends State<MyScreen> {
   final _firstController = TextEditingController();
   final _secondController = TextEditingController();
 
+  String? group = 'myGroup';
   int result = 0;
+
+  _calculate() {
+    ArithmeticFunction arithmeticfunction = ArithmeticFunction(
+        int.parse(_firstController.text), int.parse(_secondController.text));
+
+    if (group == 'add') {
+      setState(() {
+        result = arithmeticfunction.add();
+      });
+    } else if (group == 'subtract') {
+      setState(() {
+        result = arithmeticfunction.subtract();
+      });
+    } else if (group == 'multiply') {
+      setState(() {
+        result = arithmeticfunction.multiply();
+      });
+    } else if (group == 'divide') {
+      setState(() {
+        result = arithmeticfunction.divide();
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,20 +90,70 @@ class _MyScreenState extends State<MyScreen> {
                   return null;
                 },
               ),
+              ListTile(
+                title: const Text('Add'),
+                leading: Radio(
+                  value: 'add',
+                  groupValue: group,
+                  onChanged: (String? value) {
+                    setState(() {
+                      group = value;
+                    });
+                  },
+                ),
+              ),
+              ListTile(
+                title: const Text('Subtract'),
+                leading: Radio(
+                  value: 'subtract',
+                  groupValue: group,
+                  onChanged: (String? value) {
+                    setState(() {
+                      group = value;
+                    });
+                  },
+                ),
+              ),
+              ListTile(
+                title: const Text('Multiply'),
+                leading: Radio(
+                  value: 'multiply',
+                  groupValue: group,
+                  onChanged: (String? value) {
+                    setState(() {
+                      group = value;
+                    });
+                  },
+                ),
+              ),
+              ListTile(
+                title: const Text('Divide'),
+                leading: Radio(
+                  value: 'divide',
+                  groupValue: group,
+                  onChanged: (String? value) {
+                    setState(() {
+                      group = value;
+                    });
+                  },
+                ),
+              ),
               const SizedBox(height: 8),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                     onPressed: () {
                       if (_globalKey.currentState!.validate()) {
-                        setState(() {
-                          // result = first! + second!;
-                          result = int.parse(_firstController.text) +
-                              int.parse(_secondController.text);
-                        });
+                        // setState(() {
+                        //   result = int.parse(_firstController.text) +
+                        //       int.parse(_secondController.text);
+
+                        // });
+                        _calculate();
+                        Navigator.pushNamed(context, '/output');
                       }
                     },
-                    child: const Text('Add')),
+                    child: const Text('Calculate')),
               ),
               const SizedBox(height: 8),
               Text('Result : $result'),

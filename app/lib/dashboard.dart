@@ -16,27 +16,28 @@ class _DashboardState extends State<Dashboard> {
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 8),
-            SizedBox(
-              width: 180,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/add_number');
-                },
-                child: const Text('Add Number'),
-              ),
+            const SizedBox(width: 8),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/arithmeticmain');
+              },
+              child: const Text('Arithmetic'),
             ),
-            const SizedBox(height: 8),
-            SizedBox(
-              width: 180,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/simple_interest');
-                },
-                child: const Text('Simple Interest'),
-              ),
+            const SizedBox(width: 8),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/simple_interest');
+              },
+              child: const Text('Simple Interest'),
+            ),
+            const SizedBox(width: 8),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/output');
+              },
+              child: const Text('Output'),
             ),
           ],
         ),

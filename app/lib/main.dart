@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'dashboard.dart';
-import 'add_number.dart';
+import 'arithmeticmain.dart';
+import 'output.dart';
 import 'simple_interest.dart';
 
 void main() {
@@ -12,7 +13,8 @@ void main() {
       routes: {
         '/': (context) => const Dashboard(),
         '/simple_interest': (context) => const SimpleInterest(),
-        '/add_number': (context) => const MyScreen(),
+        '/arithmeticmain': (context) => const MyScreen(),
+        '/output': (context) => const Output()
       },
     ),
   );

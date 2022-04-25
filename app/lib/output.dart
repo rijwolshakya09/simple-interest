@@ -1,19 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Output extends StatefulWidget {
-  const Output({Key? key}) : super(key: key);
-  @override
-  State<Output> createState() => _OutputState();
-}
-
-class _OutputState extends State<Output> {
+class OutputScreen extends StatelessWidget {
+  final int result;
+  const OutputScreen({Key? key, required this.result}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Arithmetic Output'),
-      ),
-      body: const Text("Result"),
-    );
+        appBar: AppBar(
+          title: const Text("Output"),
+        ),
+        body: Text("result: $result"));
   }
 }

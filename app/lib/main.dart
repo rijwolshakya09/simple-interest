@@ -1,3 +1,5 @@
+import 'package:app/numbergenerator.dart';
+import 'package:app/numbersgame.dart';
 import 'package:flutter/material.dart';
 
 import 'dashboard.dart';
@@ -14,7 +16,9 @@ void main() {
         '/': (context) => const Dashboard(),
         '/simple_interest': (context) => const SimpleInterest(),
         '/arithmeticmain': (context) => const MyScreen(),
-        '/output': (context) => const Output()
+        '/numbersgame': ((context) => const Game()),
+        '/numbergenerator': ((context) => const NumberGenerator()),
+        '/output': (context) => const OutputScreen(result: 0),
       },
     ),
   );

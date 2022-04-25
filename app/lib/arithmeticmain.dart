@@ -1,5 +1,6 @@
 import 'package:app/arithmeticfunction.dart';
 import 'package:flutter/material.dart';
+import 'output.dart';
 
 class MyScreen extends StatefulWidget {
   const MyScreen({Key? key}) : super(key: key);
@@ -38,6 +39,13 @@ class _MyScreenState extends State<MyScreen> {
         result = arithmeticfunction.divide();
       });
     }
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => OutputScreen(
+            result: result,
+          ),
+        ));
   }
 
   @override
@@ -150,13 +158,12 @@ class _MyScreenState extends State<MyScreen> {
 
                         // });
                         _calculate();
-                        Navigator.pushNamed(context, '/output');
                       }
                     },
                     child: const Text('Calculate')),
               ),
               const SizedBox(height: 8),
-              Text('Result : $result'),
+              // Text('Result : $result'),
             ],
           ),
         ),

@@ -60,6 +60,45 @@ class _DashboardState extends State<Dashboard> {
                   },
                   child: const Text('Numbers Game New'),
                 ),
+                const SizedBox(width: 8),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(width: 8),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/container');
+                  },
+                  child: const Text('Container'),
+                ),
+                const SizedBox(width: 8),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/flexible');
+                  },
+                  child: const Text('Flexible'),
+                ),
+                const SizedBox(width: 8),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/gridview');
+                  },
+                  child: const Text('Grid View'),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(width: 8),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/loadimage');
+                  },
+                  child: const Text('Load Image'),
+                ),
               ],
             ),
           ],

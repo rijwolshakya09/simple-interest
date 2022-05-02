@@ -1,3 +1,9 @@
+// import 'dart:js';
+
+import 'package:app/container.dart';
+import 'package:app/flexible.dart';
+import 'package:app/gridview.dart';
+import 'package:app/loadimage.dart';
 import 'package:app/numbergenerator.dart';
 import 'package:app/numbersgame.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +25,10 @@ void main() {
         '/numbersgame': ((context) => const Game()),
         '/numbergenerator': ((context) => const NumberGenerator()),
         '/output': (context) => const OutputScreen(result: 0),
+        '/container': (context) => const ContainerScreen(),
+        '/flexible': (context) => const FlexibleScreen(),
+        '/gridview': (context) => const GridViewScreen(),
+        '/loadimage': (context) => const LoadImageScreen(),
       },
     ),
   );

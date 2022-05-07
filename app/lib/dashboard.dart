@@ -99,6 +99,13 @@ class _DashboardState extends State<Dashboard> {
                   },
                   child: const Text('Load Image'),
                 ),
+                const SizedBox(width: 8),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/toast');
+                  },
+                  child: const Text('Toast'),
+                ),
               ],
             ),
           ],
